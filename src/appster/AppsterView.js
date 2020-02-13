@@ -523,4 +523,9 @@ export default class AppsterView {
        let dialog = document.getElementById(AppsterGUIId.MODAL_YES_NO_DIALOG);
        dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
    }
+
+   showTextModal() {
+       let modal = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+       modal.classList.add(AppsterGUIClass.IS_VISIBLE);
+   }
 }
