@@ -524,8 +524,27 @@ export default class AppsterView {
        dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
    }
 
-   showTextModal() {
+   /**
+    * This method is for showing the text input modal.
+    */
+   showTextInputModal() {
        let modal = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
        modal.classList.add(AppsterGUIClass.IS_VISIBLE);
    }
+
+   /**
+    * This method is for hiding the text input modal.
+    */
+   hideTextInputModal() {
+       let modal = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+       modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    /**
+    * This method is for showing the confirm modal.
+    */
+    showConfirmModal() {
+        let modal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
+        modal.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
 }
