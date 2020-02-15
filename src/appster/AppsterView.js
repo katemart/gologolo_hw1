@@ -547,4 +547,12 @@ export default class AppsterView {
         let modal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
         modal.classList.add(AppsterGUIClass.IS_VISIBLE);
     }
+
+    /**
+    * This method is for hiding the confirm modal.
+    */
+   hideConfirmModal() {
+        let modal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
+        modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }    
 }
