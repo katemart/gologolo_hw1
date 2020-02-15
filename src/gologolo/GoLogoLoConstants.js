@@ -1,3 +1,7 @@
+export const GoLogoLoCallback = {
+    GOLOGOLO_PROCESS_CREATE_NEW_WORK: "goLogoLoCreateNewWork"
+};
+
 export const GoLogoLoDefaults = {
     GOLOGOLO_DEFAULT_TEXT: "GoLogoLo",
     GOLOGOLO_DEFAULT_FONT_SIZE: 20,
