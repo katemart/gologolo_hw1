@@ -49,7 +49,15 @@ export default class GoLogoLoModel extends AppsterModel {
     }
 
     goList = () => {
-        console.log("hi")
-        this.view.showTextModal();
+        this.view.showTextInputModal();
     }
+
+    hideTextInputModal() {
+        this.view.hideTextInputModal();
+    }
+
+    getConfirmModal = () => {
+        this.view.showConfirmModal();
+    }
+
 }
