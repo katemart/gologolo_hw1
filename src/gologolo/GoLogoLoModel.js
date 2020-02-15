@@ -1,5 +1,6 @@
 import AppsterModel from '../appster/AppsterModel.js'
 import GoLogoLoLogo from './GoLogoLoLogo.js'
+//import {GoLogoLoText} from './GoLogoLoConstants.js'
 
 export default class GoLogoLoModel extends AppsterModel {
     constructor() {
@@ -8,8 +9,8 @@ export default class GoLogoLoModel extends AppsterModel {
     }
 
     createNewWork(workName) {
-        let newRandomText = new GoLogoLoText(workName);
-        return newRandomText;
+        let newWork = new GoLogoLoLogo(workName);
+        return newWork;
     }
 
     loadWorkData(workToLoad) {
@@ -48,7 +49,7 @@ export default class GoLogoLoModel extends AppsterModel {
  //       this.view.
     }
 
-    goList = () => {
+    goList(){
         this.view.showTextInputModal();
     }
 
@@ -56,8 +57,12 @@ export default class GoLogoLoModel extends AppsterModel {
         this.view.hideTextInputModal();
     }
 
-    getConfirmModal = () => {
+    getConfirmModal() {
         this.view.showConfirmModal();
+    }
+
+    hideConfirmModal() {
+        this.view.hideConfirmModal();
     }
 
 }
