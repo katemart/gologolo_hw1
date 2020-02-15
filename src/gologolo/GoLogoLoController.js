@@ -13,6 +13,16 @@ export default class GoLogoLoController
         this.model.updateText();
     }
 
+    hideTextInputModal = () => {
+        let workNameField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
+        workNameField.value = '';
+        this.model.hideTextInputModal();
+    }
+
+    hideConfirmModal = () => {
+        this.model.hideConfirmModal();
+    }
+
     /**
     * This method gets the input from the text input modal and validates the input,
     * if valid, the work gets added to the recent work list.
@@ -23,20 +33,29 @@ export default class GoLogoLoController
         if(workNameField.value.length >= 1) {
             let existingWorkName = this.model.getRecentWork(workNameField.value);
             if(existingWorkName === null) {
-                //let newWork = this.model.createNewWork(workNameField.value);
-                console.log(workNameField.value)
+                let newWork = this.model.createNewWork(workNameField.value);
+                console.log(newWork);
+                this.model.prependWork(newWork);
             } else {
+                workNameField.value = '';
                 this.model.hideTextInputModal();
                 this.model.getConfirmModal();
             }
         } else {
-            console.log("invalid name")
+            console.log("invalid name");
         }
     }
 
+    /**
+     * This function sets up the event handlers for GoLogoLo app controls.
+     */
     registerAppsterEventHandlers() {
         super.registerAppsterEventHandlers();
         this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK,
             this[GoLogoLoCallback.GOLOGOLO_PROCESS_CREATE_NEW_WORK]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON, AppsterHTML.CLICK,
+            this[GoLogoLoCallback.GOLOGOLO_HIDE_INPUT_MODAL]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_OK_BUTTON, AppsterHTML.CLICK,
+            this[GoLogoLoCallback.GOLOGOLO_HIDE_CONFIRM_MODAL]);
     }
  }
