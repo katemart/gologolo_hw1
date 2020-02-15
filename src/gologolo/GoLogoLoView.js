@@ -1,4 +1,4 @@
-import {GoLogoLoGUIClass, GoLogoLoGUIId, GoLogoLoText} from './GoLogoLoConstants.js'
+import {GoLogoLoGUIClass, GoLogoLoGUIId, GoLogoLoText, GoLogoLoCallback} from './GoLogoLoConstants.js'
 import {AppsterHTML, AppsterSymbols} from '../appster/AppsterConstants.js'
 import AppsterView from '../appster/AppsterView.js'
 
