@@ -53,16 +53,7 @@ export default class GoLogoLoModel extends AppsterModel {
         this.view.showTextInputModal();
     }
 
-    hideTextInputModal() {
-        this.view.hideTextInputModal();
-    }
-
-    getConfirmModal() {
+    showConfirmModal() {
         this.view.showConfirmModal();
     }
-
-    hideConfirmModal() {
-        this.view.hideConfirmModal();
-    }
-
 }
