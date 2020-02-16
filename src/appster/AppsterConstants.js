@@ -25,7 +25,9 @@ export const AppsterCallback = {
     APPSTER_PROCESS_GO_HOME: "processGoHome",
     APPSTER_PROCESS_DELETE_WORK: "processDeleteWork",
     APPSTER_PROCESS_CONFIRM_DELETE_WORK: "processConfirmDeleteWork",
-    APPSTER_PROCESS_CANCEL_DELETE_WORK: "processCancelDeleteWork"
+    APPSTER_PROCESS_CANCEL_DELETE_WORK: "processCancelDeleteWork",
+    APPSTER_PROCESS_CANCEL_NEW_WORK: "processCancelNewWork",
+    APPSTER_HIDE_CONFIRM_MODAL: "hideConfirmModal"
 };
 
 /**
