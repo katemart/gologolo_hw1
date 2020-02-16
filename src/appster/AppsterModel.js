@@ -16,6 +16,10 @@ export default class AppsterModel {
         return null;
     }
 
+    getWorkToEdit() {
+        return this.workToEdit;
+    }
+
     setView(initView) {
         this.view = initView;
     }
@@ -122,5 +126,17 @@ export default class AppsterModel {
         this.listToEdit = this.createNewWork();
         this.prependList(this.listToEdit);
         this.view.loadListData(this.listToEdit);
+    }
+
+    hideTextInputModal() {
+        this.view.hideTextInputModal();
+    }
+
+    hideConfirmModal() {
+        this.view.hideConfirmModal();
+    }
+
+    hideDialog() {
+        this.view.hideDialog();
     }
 }
