@@ -1,7 +1,5 @@
 export const GoLogoLoCallback = {
-    GOLOGOLO_PROCESS_CREATE_NEW_WORK: "goLogoLoCreateNewWork",
-    GOLOGOLO_HIDE_CONFIRM_MODAL: "hideConfirmModal",
-    GOLOGOLO_HIDE_INPUT_MODAL: "hideTextInputModal"
+    GOLOGOLO_PROCESS_CREATE_NEW_WORK: "goLogoLoCreateNewWork"
 };
 
 export const GoLogoLoDefaults = {
