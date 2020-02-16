@@ -512,7 +512,7 @@ export default class AppsterView {
     * This method is for hiding the yes/no dialog.
     */
    hideDialog() {
-       let dialog = document.getElementById(AppsterGUIId.MODAL_YES_NO_DIALOG);
+       let dialog = document.getElementById(AppsterGUIId.APPSTER_YES_NO_MODAL);
        dialog.classList.remove(AppsterGUIClass.IS_VISIBLE);
    }
 
@@ -520,9 +520,17 @@ export default class AppsterView {
     * This method is for showing the yes/no dialog.
     */
    showDialog() {
-       let dialog = document.getElementById(AppsterGUIId.MODAL_YES_NO_DIALOG);
+       let dialog = document.getElementById(AppsterGUIId.APPSTER_YES_NO_MODAL);
        dialog.classList.add(AppsterGUIClass.IS_VISIBLE);
    }
+
+      /**
+    * This method is for hiding the text input modal.
+    */
+   hideTextInputModal() {
+        let modal = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+        modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
 
    /**
     * This method is for showing the text input modal.
@@ -533,12 +541,12 @@ export default class AppsterView {
    }
 
    /**
-    * This method is for hiding the text input modal.
+    * This method is for hiding the confirm modal.
     */
-   hideTextInputModal() {
-       let modal = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
-       modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
-    }
+   hideConfirmModal() {
+        let modal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
+        modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
+}   
 
     /**
     * This method is for showing the confirm modal.
@@ -546,13 +554,5 @@ export default class AppsterView {
     showConfirmModal() {
         let modal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
         modal.classList.add(AppsterGUIClass.IS_VISIBLE);
-    }
-
-    /**
-    * This method is for hiding the confirm modal.
-    */
-   hideConfirmModal() {
-        let modal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
-        modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
-    }    
+    } 
 }
