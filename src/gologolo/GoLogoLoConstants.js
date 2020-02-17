@@ -1,5 +1,7 @@
 export const GoLogoLoCallback = {
-    GOLOGOLO_PROCESS_CREATE_NEW_WORK: "goLogoLoCreateNewWork"
+    GOLOGOLO_ENTER_BUTTON_ACTION: "goLogoLoEnterButtonAction",
+    GOLOGOLO_EDIT_TEXT_BUTTON_ACTION: "goLogoLoEditTextButtonAction",
+    GOLOGOLO_FONT_SIZE_SLIDER_ACTION: "goLogoLoFontSizeSliderAction" 
 };
 
 export const GoLogoLoDefaults = {
@@ -13,6 +15,10 @@ export const GoLogoLoDefaults = {
     GOLOGOLO_DEFAULT_BORDER_TYPE: "solid",
     GOLOGOLO_DEFAULT_PADDING: 5,
     GOLOGOLO_DEFAULT_MARGIN: 10,
+};
+
+export const GoLogoLoHTML = {
+    CHANGE: "change"
 };
 
 export const GoLogoLoGUIClass = {
@@ -42,5 +48,6 @@ export const GoLogoLoText = {
     GOLOGOLO_BORDER_RADIUS_TEXT: "gologolo_border_radius_text",
     GOLOGOLO_BORDER_THICKNESS_TEXT: "gologolo_border_thickness_text",
     GOLOGOLO_PADDING_TEXT: "gologolo_padding_text",
-    GOLOGOLO_MARGIN_TEXT: "gologolo_margin_text"
+    GOLOGOLO_MARGIN_TEXT: "gologolo_margin_text",
+    GOLOGOLO_CONFIRM_LENGTH_ERROR_MODAL_TEXT: "gologolo_confirm_length_error_modal_text",
 }
