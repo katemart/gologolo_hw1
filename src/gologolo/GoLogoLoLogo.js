@@ -4,10 +4,11 @@ import {GoLogoLoDefaults} from './GoLogoLoConstants.js'
 export default class GoLogoLoLogo extends AppWork {
     constructor(name) {
         super(name);
-        this.text = GoLogoLoDefaults.GOLOGOLO_DEFAULT_TEXT_COLOR;
+        this.text = GoLogoLoDefaults.GOLOGOLO_DEFAULT_TEXT;
         this.fontSize = GoLogoLoDefaults.GOLOGOLO_DEFAULT_FONT_SIZE;
-        this.textColor = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BACKGROUND_COLOR;
-        this.backgroundColor = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_COLOR;
+        this.textColor = GoLogoLoDefaults.GOLOGOLO_DEFAULT_TEXT_COLOR;
+        this.backgroundColor = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BACKGROUND_COLOR;
+        this.borderColor = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_COLOR;
         this.borderRadius = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_RADIUS;
         this.borderStyle = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_TYPE;
         this.borderWidth = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_THICKNESS;
