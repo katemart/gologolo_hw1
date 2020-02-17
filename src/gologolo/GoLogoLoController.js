@@ -19,9 +19,8 @@ export default class GoLogoLoController
         if(workNameField.value.length >= 1) {
             let existingWorkName = this.model.getRecentWork(workNameField.value);
             if(existingWorkName === null) {
-                let newWork = this.model.createNewWork(workNameField.value);
+                this.model.loadNewList(workNameField.value);
                 this.model.hideTextInputModal();
-                this.model.prependWork(newWork);
                 workNameField.value = '';
             } else {
                 workNameField.value = '';
@@ -47,6 +46,7 @@ export default class GoLogoLoController
             currentWork.setText(logoNameField.value);
             this.model.loadWork();
             this.model.hideTextInputModal();
+            logoNameField.value = '';
         } else {
             console.log("invalid name");
         }
