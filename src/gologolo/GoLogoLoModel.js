@@ -17,6 +17,14 @@ export default class GoLogoLoModel extends AppsterModel {
         console.log("load " + workToLoad.getName());
     }
 
+    loadWork() {
+        this.view.loadWork(this.getWorkToEdit());
+    }
+
+    loadWorkStyle() {
+        this.view.loadWorkStyle(this.getWorkToEdit());
+    }
+
     makeColor(colorData) {
         return "rgb(" + colorData.red + ", " + colorData.green + ", " + colorData.blue + ")";
     }
@@ -47,6 +55,7 @@ export default class GoLogoLoModel extends AppsterModel {
 
     updateText() {
  //       this.view.
+        this.view.showTextInputModal();
     }
 
     goList(){
