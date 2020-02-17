@@ -122,10 +122,10 @@ export default class AppsterModel {
      * This method creates a new list and sets it up so that it
      * can be edited.
      */
-    loadNewList() {
-        this.listToEdit = this.createNewWork();
-        this.prependList(this.listToEdit);
-        this.view.loadListData(this.listToEdit);
+    loadNewList(newWork) {
+        this.listToEdit = this.createNewWork(newWork);
+        this.prependWork(this.listToEdit);
+        //this.view.loadListData(this.listToEdit);
     }
 
     hideTextInputModal() {
