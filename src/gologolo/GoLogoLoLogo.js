@@ -8,8 +8,9 @@ export default class GoLogoLoLogo extends AppWork {
         this.fontSize = GoLogoLoDefaults.GOLOGOLO_DEFAULT_FONT_SIZE;
         this.textColor = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BACKGROUND_COLOR;
         this.backgroundColor = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_COLOR;
-        this.borderColor = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_RADIUS;
-        this.borderThickness = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_THICKNESS;
+        this.borderRadius = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_RADIUS;
+        this.borderStyle = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_TYPE;
+        this.borderWidth = GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_THICKNESS;
         this.padding = GoLogoLoDefaults.GOLOGOLO_DEFAULT_PADDING;
         this.margin = GoLogoLoDefaults.GOLOGOLO_DEFAULT_MARGIN;
     }
@@ -63,11 +64,11 @@ export default class GoLogoLoLogo extends AppWork {
     }
 
     setBorderThickness(initBorderThickness) {
-        this.borderThickness = initBorderThickness;
+        this.borderWidth = initBorderThickness;
     }
 
     getBorderThickness() {
-        return this.borderThickness;
+        return this.borderWidth;
     }
 
     setPadding(initPadding) {
