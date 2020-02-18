@@ -41,18 +41,12 @@ export default class GoLogoLoController
     }
 
     processLogoText = () => {
-        //let logoNameField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
         let logoNameField = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD);
         let currentWork = this.model.getWorkToEdit();
-        if(logoNameField.value.length >= 1) {
-            currentWork.setText(logoNameField.value);
-            this.model.loadWork();
-            this.model.hideLogoInputModal();
-            logoNameField.value = '';
-        } else {
-            this.model.showErrorModal();
-            this.registerHideErrorModalEventHandler();
-        }
+        currentWork.setText(logoNameField.value);
+        this.model.loadWork();
+        this.model.hideLogoInputModal();
+        logoNameField.value = '';
     }
 
     goLogoLoFontSizeSliderAction = () => {
