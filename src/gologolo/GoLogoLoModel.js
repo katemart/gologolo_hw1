@@ -55,7 +55,7 @@ export default class GoLogoLoModel extends AppsterModel {
 
     updateText() {
  //       this.view.
-        this.view.showTextInputModal();
+        this.view.showLogoInputModal();
     }
 
     goList(){
@@ -64,5 +64,17 @@ export default class GoLogoLoModel extends AppsterModel {
 
     showConfirmModal() {
         this.view.showConfirmModal();
+    }
+
+    showErrorModal() {
+        this.view.showErrorModal();
+    }
+
+    hideErrorModal() {
+        this.view.hideErrorModal();
+    }
+
+    hideLogoInputModal() {
+        this.view.hideLogoInputModal();
     }
 }
