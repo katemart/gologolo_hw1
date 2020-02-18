@@ -1,7 +1,6 @@
 import {GoLogoLoCallback, GoLogoLoText, GoLogoLoGUIId} from './GoLogoLoConstants.js'
 import AppsterController from '../appster/AppsterController.js'
 import {AppsterHTML, AppsterGUIId} from '../appster/AppsterConstants.js';
-import AppWork from '../appster/AppWork.js';
 
 export default class GoLogoLoController
  extends AppsterController {
@@ -14,7 +13,7 @@ export default class GoLogoLoController
     * if valid, the work gets added to the recent work list.
     * If invalid, an error message is shown
     */
-    goLogoLoCreateNewWork(){
+    goLogoLoCreateNewWork = () => {
         let workNameField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
         if(workNameField.value.length >= 1) {
             let existingWorkName = this.model.getRecentWork(workNameField.value);
@@ -28,36 +27,31 @@ export default class GoLogoLoController
                 this.model.showConfirmModal();
             }
         } else {
-            console.log("invalid name");
+            this.model.showErrorModal();
+            this.registerHideErrorModalEventHandler();
         }
     }
 
     goLogoLoEditTextButtonAction = () => {
         this.model.updateText();
+        this.registerInputModalEventHandler();
         let logoText = this.model.getWorkToEdit().getText();
-        let logoTextField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
+        let logoTextField = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD);
         logoTextField.value = logoText;
     }
 
-    processLogoText() {
-        let logoNameField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
+    processLogoText = () => {
+        //let logoNameField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
+        let logoNameField = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD);
         let currentWork = this.model.getWorkToEdit();
         if(logoNameField.value.length >= 1) {
             currentWork.setText(logoNameField.value);
             this.model.loadWork();
-            this.model.hideTextInputModal();
+            this.model.hideLogoInputModal();
             logoNameField.value = '';
         } else {
-            console.log("invalid name");
-        }
-    }
-
-    goLogoLoEnterButtonAction = () => {
-        let home_screen = document.getElementById(AppsterGUIId.APPSTER_HOME_SCREEN);
-        if (home_screen.hidden) {
-            this.processLogoText();
-        } else {
-            this.goLogoLoCreateNewWork();
+            this.model.showErrorModal();
+            this.registerHideErrorModalEventHandler();
         }
     }
 
@@ -117,6 +111,25 @@ export default class GoLogoLoController
         this.model.loadWorkStyle();
     }
 
+    hideErrorModal = () => {
+        this.model.hideErrorModal();
+    }
+
+    hideLogoInputModal = () => {
+        this.model.hideLogoInputModal();
+    }
+
+    registerHideErrorModalEventHandler() {
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_ERROR_MODAL_OK_BUTTON, AppsterHTML.CLICK,
+            this[GoLogoLoCallback.GOLOGOLO_HIDE_ERROR_MODAL]);
+    }
+
+    registerInputModalEventHandler() {
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK,
+            this[GoLogoLoCallback.GOLOGOLO_PROCESS_LOGO_TEXT]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON, AppsterHTML.CLICK,
+            this[GoLogoLoCallback.GOLOGOLO_CANCEL_LOGO_TEXT]);
+    }
 
     /**
      * This function sets up the event handlers for GoLogoLo app controls.
@@ -124,7 +137,7 @@ export default class GoLogoLoController
     registerAppsterEventHandlers() {
         super.registerAppsterEventHandlers();
         this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK,
-            this[GoLogoLoCallback.GOLOGOLO_ENTER_BUTTON_ACTION]);
+            this[GoLogoLoCallback.GOLOGOLO_CREATE_NEW_WORK]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_EDIT_TEXT_BUTTON, AppsterHTML.CLICK,
             this[GoLogoLoCallback.GOLOGOLO_EDIT_TEXT_BUTTON_ACTION]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.INPUT,
