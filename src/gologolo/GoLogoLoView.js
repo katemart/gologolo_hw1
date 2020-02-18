@@ -1,5 +1,5 @@
 import {GoLogoLoGUIClass, GoLogoLoGUIId, GoLogoLoText, GoLogoLoCallback} from './GoLogoLoConstants.js'
-import {AppsterHTML, AppsterSymbols} from '../appster/AppsterConstants.js'
+import {AppsterHTML, AppsterGUIClass, AppsterGUIId} from '../appster/AppsterConstants.js'
 import AppsterView from '../appster/AppsterView.js'
 
 export default class GoLogoLoView extends AppsterView {
@@ -105,5 +105,136 @@ export default class GoLogoLoView extends AppsterView {
     appendLetter(listItemId, letterToAppend) {
         let textList = document.getElementById(listItemId);
         textList.innerHTML += textList.innerHTML + letterToAppend;
+    }
+
+    buildGoLogoLoErrorModal() {
+        let confirmModal = this.buildElement( AppsterHTML.DIV, 
+                                            GoLogoLoGUIId.GOLOGOLO_ERROR_MODAL,
+                                            [AppsterGUIClass.APPSTER_MODAL],
+                                            [],
+                                            null,
+                                            AppsterGUIClass.MODAL_ANIMATION_LEFT);
+        let confirmFrame = this.buildElement( AppsterHTML.DIV, 
+                                            GoLogoLoGUIId.GOLOGOLO_ERROR_MODAL_FRAME,
+                                            [AppsterGUIClass.APPSTER_MODAL_FRAME]);
+        let header = this.buildElement( AppsterHTML.HEADER, 
+                                        GoLogoLoGUIId.GOLOGOLO_ERROR_MODAL_HEADER,
+                                        [AppsterGUIClass.APPSTER_MODAL_HEADER]);
+        let section = this.buildElement(    AppsterHTML.SECTION, 
+                                            GoLogoLoGUIId.GOLOGOLO_ERROR_MODAL_SECTION,
+                                            [AppsterGUIClass.APPSTER_MODAL_SECTION]);
+        let p = this.buildElement(AppsterHTML.P);
+        let strong = this.buildElement(     AppsterHTML.STRONG, 
+                                            "",
+                                            [],
+                                            [],
+                                            GoLogoLoText.GOLOGOLO_ERROR_MODAL_PROMPT_TEXT);
+        let okButton = this.buildElement(   AppsterHTML.BUTTON, 
+                                            GoLogoLoGUIId.GOLOGOLO_ERROR_MODAL_OK_BUTTON,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            GoLogoLoText.GOLOGOLO_ERROR_MODAL_OK_BUTTON_TEXT);
+        let footer = this.buildElement(     AppsterHTML.FOOTER, 
+                                            "", 
+                                            [AppsterGUIClass.APPSTER_MODAL_FOOTER],
+                                            [],
+                                            GoLogoLoText.GOLOGOLO_ERROR_MODAL_FOOTER_TEXT);
+        p.appendChild(strong);
+        section.appendChild(p);
+        confirmFrame.appendChild(header);
+        confirmFrame.appendChild(section);
+        section.appendChild(okButton);
+        confirmFrame.appendChild(footer);
+        confirmModal.appendChild(confirmFrame);
+        return confirmModal;
+    }
+
+    buildGoLogoLoInputModal() {
+        let textModal = this.buildElement(  AppsterHTML.DIV, 
+                                            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL,
+                                            [AppsterGUIClass.APPSTER_MODAL],
+                                            [],
+                                            null,
+                                            AppsterGUIClass.MODAL_ANIMATION_LEFT);
+        let textFrame = this.buildElement( AppsterHTML.DIV, 
+                                            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_FRAME,
+                                            [AppsterGUIClass.APPSTER_MODAL_FRAME]);
+        let header = this.buildElement( AppsterHTML.HEADER, 
+                                        GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_HEADER,
+                                        [AppsterGUIClass.APPSTER_MODAL_HEADER]);
+        let section = this.buildElement(    AppsterHTML.SECTION, 
+                                            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_SECTION,
+                                            [AppsterGUIClass.APPSTER_MODAL_SECTION]);
+        let p = this.buildElement(AppsterHTML.P);
+        let strong = this.buildElement(    AppsterHTML.STRONG, 
+                                                "",
+                                                [],
+                                                [],
+                                                GoLogoLoText.GOLOGOLO_TEXT_INPUT_MODAL_PROMPT_TEXT);
+        let textFieldAttributes = [];
+        textFieldAttributes[AppsterHTML.TYPE] = AppsterHTML.TEXT;
+        let textField = this.buildElement(  AppsterHTML.INPUT,
+                                            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD,
+                                            [AppsterGUIClass.APPSTER_MODAL_TEXTFIELD],
+                                            textFieldAttributes);
+        let enterButton = this.buildElement(   AppsterHTML.BUTTON, 
+                                            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            GoLogoLoText.GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT);
+        let cancelButton = this.buildElement(AppsterHTML.BUTTON, 
+                                            GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            GoLogoLoText.GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT);
+        let footer = this.buildElement(     AppsterHTML.FOOTER, 
+                                            "", 
+                                            [AppsterGUIClass.APPSTER_MODAL_FOOTER],
+                                            [],
+                                            GoLogoLoText.GOLOGOLO_TEXT_INPUT_MODAL_FOOTER_TEXT);
+        p.appendChild(strong);
+        section.appendChild(p);
+        textFrame.appendChild(header);
+        textFrame.appendChild(section);
+        section.appendChild(textField);
+        section.appendChild(enterButton);
+        section.appendChild(cancelButton);
+        textFrame.appendChild(footer);
+        textModal.appendChild(textFrame);
+        return textModal;
+    }
+
+    createLogoInputModal() {
+        let appsterRootDiv = document.getElementById(AppsterGUIId.APPSTER_ROOT_DIV);
+        let modal = this.buildGoLogoLoInputModal();
+        appsterRootDiv.appendChild(modal);
+    }
+
+    createErrorModal() {
+        let appsterRootDiv = document.getElementById(AppsterGUIId.APPSTER_ROOT_DIV);
+        let modal = this.buildGoLogoLoErrorModal();
+        appsterRootDiv.appendChild(modal);
+    }
+
+    showLogoInputModal() {
+        this.createLogoInputModal();
+        let modal = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL);
+        modal.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    hideLogoInputModal() {
+        let modal = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL);
+        modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    showErrorModal() {
+        this.createErrorModal();
+        let modal = document.getElementById(GoLogoLoGUIId.GOLOGOLO_ERROR_MODAL);
+        modal.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    hideErrorModal() {
+        let modal = document.getElementById(GoLogoLoGUIId.GOLOGOLO_ERROR_MODAL);
+        modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
     }
 }
