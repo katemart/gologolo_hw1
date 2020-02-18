@@ -20,6 +20,15 @@
         {"appster_text_input_modal_cancel_button_text": "Cancel"},
         {"appster_text_input_modal_footer_text": "Creating New Logo"},
 
+        {"gologolo_error_modal_prompt_text": "Invalid text, must be at least one character or longer"},
+        {"gologolo_error_modal_ok_button_text": "Ok"},
+        {"gologolo_error_modal_footer_text": "Blank Text"},
+
+        {"gologolo_text_input_modal_prompt_text": "Enter a text for your logo: "},
+        {"gologolo_text_input_modal_enter_button_text": "Enter"},
+        {"gologolo_text_input_modal_cancel_button_text": "Cancel"},
+        {"gologolo_text_input_modal_footer_text": "Creating New Logo Text"},
+
         {"gologolo_edit_text_text": "Edit Text &#x270e;"},
         {"gologolo_font_size_text": "Font Size: "},
         {"gologolo_text_color_text": "Text Color: "},
