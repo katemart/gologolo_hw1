@@ -1,5 +1,6 @@
 export const GoLogoLoCallback = {
-    GOLOGOLO_ENTER_BUTTON_ACTION: "goLogoLoEnterButtonAction",
+    //GOLOGOLO_ENTER_BUTTON_ACTION: "goLogoLoEnterButtonAction",
+    GOLOGOLO_CREATE_NEW_WORK: "goLogoLoCreateNewWork",
     GOLOGOLO_EDIT_TEXT_BUTTON_ACTION: "goLogoLoEditTextButtonAction",
     GOLOGOLO_FONT_SIZE_SLIDER_ACTION: "goLogoLoFontSizeSliderAction",
     GOLOGOLO_TEXT_COLOR_PICKER_ACTION: "goLogoLoTextColorPickerAction",
@@ -8,7 +9,10 @@ export const GoLogoLoCallback = {
     GOLOGOLO_BORDER_RADIUS_SLIDER_ACTION: "goLogoLoBorderRadiusSliderAction",
     GOLOGOLO_BORDER_THICKNESS_SLIDER_ACTION: "goLogoLoBorderThicknessSliderAction",
     GOLOGOLO_PADDING_SLIDER_ACTION: "goLogoLoPaddingSliderAction",
-    GOLOGOLO_MARGIN_SLIDER_ACTION: "goLogoLoMarginSliderAction"
+    GOLOGOLO_MARGIN_SLIDER_ACTION: "goLogoLoMarginSliderAction",
+    GOLOGOLO_HIDE_ERROR_MODAL: "hideErrorModal",
+    GOLOGOLO_PROCESS_LOGO_TEXT: "processLogoText",
+    GOLOGOLO_CANCEL_LOGO_TEXT: "hideLogoInputModal"
 };
 
 export const GoLogoLoDefaults = {
@@ -39,7 +43,24 @@ export const GoLogoLoGUIId = {
     GOLOGOLO_BORDER_THICKNESS_SLIDER: "gologolo_border_thickness_slider",
     GOLOGOLO_PADDING_SLIDER: "gologolo_padding_slider",
     GOLOGOLO_MARGIN_SLIDER: "gologolo_margin_slider",
-    GOLOGOLO_TEXT: "gologolo_text"
+    GOLOGOLO_TEXT: "gologolo_text",
+
+    //IDs FOR MODALS
+    GOLOGOLO_ERROR_MODAL: "gologolo_error_modal",
+    GOLOGOLO_ERROR_MODAL_FRAME: "gologolo_error_modal_frame",
+    GOLOGOLO_ERROR_MODAL_HEADER: "gologolo_error_modal_header",
+    GOLOGOLO_ERROR_MODAL_SECTION: "gologolo_error_modal_section",
+    GOLOGOLO_ERROR_MODAL_OK_BUTTON: "gologolo_error_modal_ok_button",
+    GOLOGOLO_ERROR_MODAL_FOOTER: "gologolo_error_modal_footer",
+
+    GOLOGOLO_TEXT_INPUT_MODAL: "gologolo_text_input_modal",
+    GOLOGOLO_TEXT_INPUT_MODAL_FRAME: "gologolo_text_input_modal_frame",
+    GOLOGOLO_TEXT_INPUT_MODAL_HEADER: "gologolo_text_input_modal_header",
+    GOLOGOLO_TEXT_INPUT_MODAL_SECTION: "gologolo_text_input_modal_section",
+    GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD: "gologolo_text_input_modal_textfield",
+    GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON: "gologolo_text_input_modal_enter_button",
+    GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON: "gologolo_text_input_modal_cancel_button",
+    GOLOGOLO_TEXT_INPUT_MODAL_FOOTER: "gologolo_text_input_modal_footer"
 };
 
 export const GoLogoLoText = {
@@ -52,5 +73,13 @@ export const GoLogoLoText = {
     GOLOGOLO_BORDER_THICKNESS_TEXT: "gologolo_border_thickness_text",
     GOLOGOLO_PADDING_TEXT: "gologolo_padding_text",
     GOLOGOLO_MARGIN_TEXT: "gologolo_margin_text",
-    GOLOGOLO_CONFIRM_LENGTH_ERROR_MODAL_TEXT: "gologolo_confirm_length_error_modal_text",
+
+    GOLOGOLO_ERROR_MODAL_PROMPT_TEXT: "gologolo_error_modal_prompt_text",
+    GOLOGOLO_ERROR_MODAL_OK_BUTTON_TEXT: "gologolo_error_modal_ok_button_text",
+    GOLOGOLO_ERROR_MODAL_FOOTER_TEXT: "gologolo_error_modal_footer_text",
+
+    GOLOGOLO_TEXT_INPUT_MODAL_PROMPT_TEXT: "gologolo_text_input_modal_prompt_text",
+    GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT: "gologolo_text_input_modal_enter_button_text",
+    GOLOGOLO_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT: "gologolo_text_input_modal_cancel_button_text",
+    GOLOGOLO_TEXT_INPUT_MODAL_FOOTER_TEXT: "gologolo_text_input_modal_footer_text",
 }
