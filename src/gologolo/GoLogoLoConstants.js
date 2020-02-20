@@ -1,7 +1,7 @@
 export const GoLogoLoCallback = {
     //GOLOGOLO_ENTER_BUTTON_ACTION: "goLogoLoEnterButtonAction",
     GOLOGOLO_CREATE_NEW_WORK: "goLogoLoCreateNewWork",
-    GOLOGOLO_EDIT_TEXT_BUTTON_ACTION: "goLogoLoEditTextButtonAction",
+    GOLOGOLO_PROCESS_EDIT_TEXT: "processEditText",
     GOLOGOLO_FONT_SIZE_SLIDER_ACTION: "goLogoLoFontSizeSliderAction",
     GOLOGOLO_TEXT_COLOR_PICKER_ACTION: "goLogoLoTextColorPickerAction",
     GOLOGOLO_BACKGROUND_COLOR_PICKER_ACTION: "goLogoLoBackgroundColorPickerAction",
