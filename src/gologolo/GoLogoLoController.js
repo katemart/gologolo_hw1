@@ -18,7 +18,7 @@ export default class GoLogoLoController
         if(workNameField.value.length >= 1) {
             let existingWorkName = this.model.getRecentWork(workNameField.value);
             if(existingWorkName === null) {
-                this.model.loadNewList(workNameField.value);
+                this.model.loadNewList(workNameField.value.replace(/<[^>]*>?/gm, ''));
                 this.model.hideTextInputModal();
                 workNameField.value = '';
             } else {
@@ -32,7 +32,7 @@ export default class GoLogoLoController
         }
     }
 
-    goLogoLoEditTextButtonAction = () => {
+    processEditText = () => {
         this.model.updateText();
         this.registerInputModalEventHandler();
         let logoText = this.model.getWorkToEdit().getText();
@@ -43,7 +43,7 @@ export default class GoLogoLoController
     processLogoText = () => {
         let logoNameField = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD);
         let currentWork = this.model.getWorkToEdit();
-        currentWork.setText(logoNameField.value);
+        currentWork.setText(logoNameField.value.replace(/<[^>]*>?/gm, ''));
         this.model.loadWork();
         this.model.hideLogoInputModal();
         logoNameField.value = '';
@@ -133,7 +133,7 @@ export default class GoLogoLoController
         this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK,
             this[GoLogoLoCallback.GOLOGOLO_CREATE_NEW_WORK]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_EDIT_TEXT_BUTTON, AppsterHTML.CLICK,
-            this[GoLogoLoCallback.GOLOGOLO_EDIT_TEXT_BUTTON_ACTION]);
+            this[GoLogoLoCallback.GOLOGOLO_PROCESS_EDIT_TEXT]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.INPUT,
             this[GoLogoLoCallback.GOLOGOLO_FONT_SIZE_SLIDER_ACTION]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, AppsterHTML.INPUT,
