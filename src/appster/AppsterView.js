@@ -381,9 +381,6 @@ export default class AppsterView {
         }
     }
 
-
-
-
     /**
      * This function will navigate the user to the home (i.e. welcome) screen.
      */
@@ -528,6 +525,8 @@ export default class AppsterView {
     * This method is for hiding the text input modal.
     */
    hideTextInputModal() {
+        let btn = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
+        btn.disabled = true;
         let modal = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
     }
@@ -537,7 +536,9 @@ export default class AppsterView {
     */
    showTextInputModal() {
        let modal = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
+       let btn = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON);
        modal.classList.add(AppsterGUIClass.IS_VISIBLE);
+       btn.disabled = false;
    }
 
    /**
