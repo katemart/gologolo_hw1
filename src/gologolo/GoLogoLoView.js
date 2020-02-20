@@ -218,11 +218,15 @@ export default class GoLogoLoView extends AppsterView {
 
     showLogoInputModal() {
         this.createLogoInputModal();
+        let btn = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON);
+        btn.disabled = false;
         let modal = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL);
         modal.classList.add(AppsterGUIClass.IS_VISIBLE);
     }
 
     hideLogoInputModal() {
+        let btn = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_ENTER_BUTTON);
+        btn.disabled = true;
         let modal = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL);
         modal.classList.remove(AppsterGUIClass.IS_VISIBLE);
     }
