@@ -351,7 +351,7 @@ export default class AppsterView {
         let newA = this.buildElement(AppsterHTML.A);
         newA.setAttribute(AppsterHTML.CLASS, AppsterGUIClass.APPSTER_HOME_WORK_LINK);
         newA.setAttribute('href', '#');
-        newA.innerHTML = workName;
+        newA.textContent = workName;
         newA.workId = workName;
         let br = document.createElement(AppsterHTML.BR);
         newA.appendChild(br);

@@ -15,10 +15,10 @@ export default class GoLogoLoController
     */
     goLogoLoCreateNewWork = () => {
         let workNameField = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
-        if(workNameField.value.length >= 1) {
+        if(workNameField.value.trim().length >= 1) {
             let existingWorkName = this.model.getRecentWork(workNameField.value);
             if(existingWorkName === null) {
-                this.model.loadNewList(workNameField.value.replace(/<[^>]*>?/gm, ''));
+                this.model.loadNewList(workNameField.value);
                 this.model.hideTextInputModal();
                 workNameField.value = '';
             } else {
@@ -28,6 +28,7 @@ export default class GoLogoLoController
             }
         } else {
             this.model.showErrorModal();
+            workNameField.value = '';
             this.registerHideErrorModalEventHandler();
         }
     }
@@ -43,7 +44,7 @@ export default class GoLogoLoController
     processLogoText = () => {
         let logoNameField = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_INPUT_MODAL_TEXTFIELD);
         let currentWork = this.model.getWorkToEdit();
-        currentWork.setText(logoNameField.value.replace(/<[^>]*>?/gm, ''));
+        currentWork.setText(logoNameField.value);
         this.model.loadWork();
         this.model.hideLogoInputModal();
         logoNameField.value = '';

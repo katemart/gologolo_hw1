@@ -60,7 +60,7 @@ export default class GoLogoLoView extends AppsterView {
 
     loadWork(work) {
         let textDiv = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
-        textDiv.innerHTML = work.getText();
+        textDiv.textContent = work.getText();
         let fontSizeSlider = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER);
         fontSizeSlider.value = work.getFontSize();
         let textColorPicker = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER);
