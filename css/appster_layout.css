@@ -75,6 +75,7 @@
 }
 #appster_edit_workspace {
     position: absolute;
+    overflow: auto;
     width: 100%;
     left: 0%;
     height: 90%;
