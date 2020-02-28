@@ -20,6 +20,7 @@ export default class GoLogoLoController
             if(existingWorkName === null) {
                 this.model.loadNewList(workNameField.value);
                 this.model.hideTextInputModal();
+                this.model.editWork(workNameField.value)
                 workNameField.value = '';
             } else {
                 workNameField.value = '';
